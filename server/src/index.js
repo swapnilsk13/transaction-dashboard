@@ -3,12 +3,14 @@ const mongoose = require("mongoose");
 const axios = require("axios");
 const cors = require("cors");
 const Transaction = require("./models/transaction");
+require("dotenv").config();
 
 const app = express();
-const PORT = 8080;
+const port = process.env.PORT || 8080;
+const mongoUri = process.env.MONGO_URI;
 
 mongoose
-  .connect("mongodb+srv://swapnil:1234@cluster0.pgovjci.mongodb.net/", {
+  .connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -47,6 +49,6 @@ app.use("/barchart", barChartRoute);
 app.use("/piechart", pieChartRoute);
 app.use("/combined",combinedRoute);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
