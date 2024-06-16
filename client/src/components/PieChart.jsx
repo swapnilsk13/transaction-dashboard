@@ -14,7 +14,7 @@ const PieChart = () => {
   const fetchData = async (month) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/pieChart?month=${month}`
+        `https://transaction-dashboard-rho.vercel.app/pieChart?month=${month}`
       );
       const data = response.data;
 

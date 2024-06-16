@@ -13,7 +13,7 @@ const BarChart = () => {
   const fetchData = async (month) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/barChart?month=${month}`
+        `https://transaction-dashboard-rho.vercel.app/barChart?month=${month}`
       );
       const data = response.data;
 

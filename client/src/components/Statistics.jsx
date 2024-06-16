@@ -14,7 +14,7 @@ const Statistics = () => {
   const fetchStatistics = async (month) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/statistics?month=${month}`
+        `https://transaction-dashboard-rho.vercel.app/statistics?month=${month}`
       );
       const { totalSaleAmount, totalSoldItems, totalNotSoldItems } =
         response.data;

@@ -16,7 +16,7 @@ const TransactionTable = () => {
   const fetchTransactions = async (month, page) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/transactions?month=${month}&page=${page}&search=${searchTerm}`
+        `https://transaction-dashboard-rho.vercel.app/transactions?month=${month}&page=${page}&search=${searchTerm}`
       );
       const { transactions, total, perPage } = response.data;
 
